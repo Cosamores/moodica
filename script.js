@@ -1,4 +1,5 @@
-
+const WEATHER_API_KEY = 'INSIRA SUA CHAVE DE API DO ACCUWEATHER AQUI'
+const YOUTUBE_API_KEY = 'INSIRA SUA CHAVE DE API DO YOUTUBE V.3 AQUI'
 
 async function fetchWeatherAndVideoData(locationKey, city) {
     const WEATHER_API_URL = `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${WEATHER_API_KEY}`;
@@ -262,8 +263,8 @@ else if (moodLowerCase.includes('sunny')|| moodLowerCase.includes('sun') || mood
             videoElement.src = `https://www.youtube.com/embed/${youtubeData.items[0].id.videoId}`;
             
         } else {
-            console.log('No YouTube videos found for the current mood.');
-            alert('Um erro aconteceu, tente novamente mais tarde');
+            console.log('Não foram encontrados vídeos para este clima. Tente novamente mais tarde');
+            alert('Não foram encontrados vídeos para este clima. Tente novamente mais tarde');
         }
     }
        
@@ -291,7 +292,7 @@ function editDeleteHandler(card) {
     });
 
     editButton.addEventListener('click', () => {
-        const cityName = prompt('Enter the new city name:');
+        const cityName = prompt('Digite o nome da cidade:');
         if (cityName) {
             const cityElement = card.querySelector('.city');
             cityElement.textContent = cityName;
@@ -341,7 +342,7 @@ form.addEventListener("submit", (event) => {
     })
     
     .catch(error => {
-      console.log('There was a problem with the fetch operation: ' + error.message);
+      console.log('Houve um problema na operação fetch: ' + error.message);
     });
 });
 
@@ -353,7 +354,7 @@ const updateCard = async (city, card) => {
     fetch(LOCATION_API_URL)
     .then(response => {
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`Erro HTTP! status: ${response.status}`);
         }
         return response.json();
     })
@@ -366,7 +367,7 @@ const updateCard = async (city, card) => {
         updateCardContents(card, city, temp, wtext, youtubeData);
     })
     .catch(error => {
-        console.log('There was a problem with the fetch operation: ' + error.message);
+        console.log('Houve um problema com a operação fetch: ' + error.message);
     });
 }
 
@@ -386,6 +387,7 @@ function updateCardContents(card, city, temp, wtext, youtubeData) {
 
 const generateFooter = () => {
     const footerContent = document.querySelector('.footer-content');
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const date = new Date();
-    footerContent.appendChild(document.createTextNode(`Caraguatatuba,  ${date}`))
+    footerContent.appendChild(document.createTextNode(`IFSP - Caraguatatuba,  ${date.toLocaleDateString("pt-BR", options)}`))
 }

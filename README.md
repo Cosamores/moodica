@@ -2,12 +2,12 @@
 ## A música certa para o clima que você escolher
 
 
-A aplicação gera cards com dados consumidos de 2 APIs:
+A aplicação gera cards com dados consumidos de 2 APIs  Antes de testar, será necessário adicionar suas respectivas chaves. O passo a passo para a criação de uma nova chave pode ser encontrado nas documentações oficiais:
 
 - Accuweather: https://developer.accuweather.com/apis
 - Youtube V.3: https://developers.google.com/youtube/v3/docs
 
-Através da função assíncrona:
+Através da função assíncrona fetchWeatherAndVideoData , o parâmetro WeatherText é utilizado para realizar uma busca por vídeos no YouTube referentes à condição do tempo da cidade escolhida, que preencherão o card junto a uma estilização personalizada.
 
 ```
 async function fetchWeatherAndVideoData(locationKey, city) {
@@ -36,13 +36,12 @@ async function fetchWeatherAndVideoData(locationKey, city) {
 
 ```
 
-O parâmetro WeatherText é utilizado para realizar uma busca por vídeos no Youtube que preencherão o card com a estilização e vídeo referente à condição do tempo na cidade incluida na busca.
-
-A função inclui manipulação de erros e retorna os dados necessários para que os cards possam ser editados pelo usuário.
+A função inclui manipulação de erros e retorna os dados necessários para que os cards possam ser posteriormente editados pelo usuário.
 
 A adição de um novo card pode ser realizada através do formulário que é mostrado com um clique no botão "Adicionar nova sugestão".
 
-
+Ao passar o mouse sobre um card, os botões "Editar cidade" e "Excluir" aparecem e permitem ao usuário editar o card ou excluí-lo.
+Ao retirar o mouse de um card, os botões desaparecem.
 
 Diego Soares
 Caraguatatuba, junho de 2023
