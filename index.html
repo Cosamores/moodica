@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodica</title>
+</head>
+<body>
+    <wrapper>
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="navBar1">
+            <div class="container">
+                <div class="navbar-header">
+                    <button id="addCardBtn" class="navbar-toggle">Adicionar nova sugestão</button>
+                    <div class="navbar-brand" href="#">MOODICA
+                    </div>
+                </div>
+            </div>
+        </nav>
+<div class="card-container">
+
+</div>   
+
+<div id="modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Moodica</h5>
+          <div class="close-btn">
+          <button type="button" class="btn-close close" data-mdb-dismiss="modal" aria-label="Close">&times;</button>
+        </div>
+    </div> 
+        <div class="modal-body">
+            <form id="card-form" class="form card-form form-group">
+                <label class="city label" for="city-input">Insira o nome da cidade:</label>
+                <input type="text" id="city-input" class="city-input" name="city-input" placeholder="Brasília">
+                <button type="submit" class="btn btn-primary">Buscar por cidade</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--     <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="close-btn">
+            <span class="close"></span>
+        </div> 
+        <form id="card-form" class="card-form form-group">
+          <label class="city" for="city-input">Insira o nome da cidade:</label>
+          <input type="text" id="city-input" name="city-input" placeholder="Brasília">
+          <button type="submit">Buscar por cidade</button>
+        </form>
+      </div>
+    </div> -->
+        <footer>
+            <div class="footer text-center text-white fixed-bottom">
+                <div class="footer-content text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    
+                    </div>
+            </div>
+            <link rel="stylesheet" href="styles.css">
+            <script src="script.js"></script>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        </footer>
+    </wrapper>
+    </body>
+</html>
