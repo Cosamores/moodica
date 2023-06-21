@@ -19,8 +19,6 @@ async function fetchWeatherAndVideoData(locationKey, city) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         let weatherData = await response.json();
-        console.log(weatherData);
-
         const mood = `music for ${weatherData[0].WeatherText} weather`;
         const YOUTUBE_API_URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&order=viewCount&q=${mood}&type=video&videoDefinition=high&key=${YOUTUBE_API_KEY}`;
 
@@ -29,8 +27,6 @@ async function fetchWeatherAndVideoData(locationKey, city) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         let youtubeData = await response.json();
-        console.log(youtubeData);
-        console.log(`the mood is: ${mood}`);
         createCard(city, weatherData, youtubeData);
         return { weatherData, youtubeData };
     } catch (error) {
@@ -41,6 +37,8 @@ async function fetchWeatherAndVideoData(locationKey, city) {
 ```
 
 O parâmetro WeatherText é utilizado para realizar uma busca por vídeos no Youtube que preencherão o card com a estilização e vídeo referente à condição do tempo na cidade incluida na busca.
+
+A função inclui manipulação de erros e retorna os dados necessários para que os cards possam ser editados pelo usuário.
 
 A adição de um novo card pode ser realizada através do formulário que é mostrado com um clique no botão "Adicionar nova sugestão".
 
