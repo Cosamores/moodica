@@ -1,5 +1,3 @@
-const WEATHER_API_KEY = 'bnoH43C4yoJGEhyjVgeEUfgPnYHRKhIo'; // 't3A9acfbSeUW142EJ6ueRlUq26LF8Ggq'
-const YOUTUBE_API_KEY = 'AIzaSyAIGaJdr1mmu5R8J2BNZHm0AqNQWXDJU7Q';  // 'AIzaSyDmW3le6wtpmUseFA-K06Xsv42msejwxA8';
 
 
 async function fetchWeatherAndVideoData(locationKey, city) {
